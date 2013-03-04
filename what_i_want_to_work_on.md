@@ -25,11 +25,12 @@ I heard three people at Waza say they don't use Heroku for their more specialize
 
 ## Other Important Things
 
-- Unified Buildpack Directory
-- Unified CLI Plugin Directory: A minimalist revival of the now-defunct herocutter. In it's simplest form this could be a list
+- A Buildpack Directory, because there are a [bunch](http://buildpacks.heroku.com/)
+  of [varying](https://devcenter.heroku.com/articles/third-party-buildpacks) buildpack
+  [lists](https://devcenter.heroku.com/articles/buildpacks) out [there](https://github.com/buildpacks).
+- A CLI Plugin Directory: A minimalist revival of the now-defunct herocutter. In it's simplest form this could be a list
   of github repos, with some CLI integration like `heroku plugins:list` and `heroku plugins:search foo`.
 - Icon and Font Build Pipelines
 - EU Launch Page
 - [panHeroku Nav](https://github.com/heroku/boomerang#readme)
 - [The Directory Design Pattern](https://basecamp.com/1764621/projects/2224615-design-rodeo/messages/8991465-filtering-uis-are)
-
