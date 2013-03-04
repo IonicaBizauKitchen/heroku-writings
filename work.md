@@ -26,5 +26,5 @@ I heard three people at Waza say they don't use Heroku for their more specialize
   [lists](https://devcenter.heroku.com/articles/buildpacks) out [there](https://github.com/buildpacks).
 - A CLI Plugin Directory: A minimalist revival of the now-defunct herocutter. In it's simplest form this could be a list
   of github repos, with some CLI integration like `heroku plugins:list` and `heroku plugins:search foo`.
-- [Icon Build Pipelines](https://github.com/zeke/miyagi/blob/font-pipeline/app/models/font.rb).
-- [The emerging Directory Design Pattern](https://basecamp.com/1764621/projects/2224615-design-rodeo/messages/8991465-filtering-uis-are)
+- [Icon Build Pipelines](https://github.com/zeke/miyagi/blob/font-pipeline/app/models/font.rb)
+- The emerging [Directory Design Pattern](https://basecamp.com/1764621/projects/2224615-design-rodeo/messages/8991465-filtering-uis-are)
