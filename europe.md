@@ -8,9 +8,9 @@ The Europe region offers all the features of the existing US region. Both region
 
 ## Faster Apps
 
-If your customers are outside the US, deploying your apps to Heroku’s Europe region can improve app performance for your end-users. With this beta release, apps running in Europe avoid significant routing delays that EU users would otherwise encounter when accessing apps in US data centers. For customer-facing web and mobile apps, this performance difference often means a dramatic improvement in app responsiveness. We’ve observed performance improvements of 100ms per request or more for European end-users:
+The physical proximity of the Europe region to European end-users means reduced latency, often resulting in a dramatic improvement in app responsiveness to those users. We’ve observed performance improvements of 100ms per request or more for European end-users:
 
-<img src="https://s3.amazonaws.com/f.cl.ly/items/3k181A0r1m2Z1j1i0o3L/eu_latency.svg#.png" alt="Lower Latency in Europe" class="stretchy">
+<img src="https://s3.amazonaws.com/f.cl.ly/items/0D040q1E1d1y3z1w2Q22/eu_response_times.svg" alt="Lower Latency in Europe" class="stretchy">
 
 ## A Familiar Workflow
 
@@ -19,9 +19,11 @@ All Heroku users can now create and deploy apps to the Europe region:
     $ heroku create --region eu
     $ git push heroku master
 
+Once the app is created, you can interact with it just like any other Heroku app.
+
 ## Easy App Migration with Heroku Fork
 
-<p>To ease the process of migrating existing applications to the Europe region, we created <a href="https://devcenter.heroku.com/articles/app-migration#fork-application">heroku fork</a> , a new addition to the Heroku CLI. Heroku fork copies an app's Heroku Postgres data and config vars, and re-provisions all its add-ons. If you have an existing app you’d like to run in the Europe region, check that you’ve got the most recent<a href="https://devcenter.heroku.com/articles/heroku-command#installing-the-heroku-cli">Heroku toolbelt</a> installed and use Heroku fork to create a running copy of your app in the new region:</p>
+<p>To ease the process of migrating existing applications to the Europe region, we created <a href="https://devcenter.heroku.com/articles/app-migration#fork-application">heroku fork</a>, a new addition to the Heroku CLI. Heroku fork copies an app's Heroku Postgres data and config vars, and re-provisions all its add-ons. If you have an existing app you’d like to run in the Europe region, check that you’ve got the most recent <a href="https://devcenter.heroku.com/articles/heroku-command#installing-the-heroku-cli">Heroku toolbelt</a> installed and use Heroku fork to create a running copy of your app in the new region:</p>
 
     $ heroku fork --region eu
     Creating fork myapp-332... done
@@ -52,6 +54,10 @@ Note: `heroku fork` will not move any domains or scale your app past a single dy
 <li><a href="https://addons.heroku.com/cleardb" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/303/original.png')">ClearDB</a></li>
 </ol>
 
+To discover which add-ons are available in the Europe region, [search for 'europe' on the addons homepage](https://addons.heroku.com/?q=europe) or use the new `--region` flag in the heroku CLI:
+
+    $ heroku addons:list --region eu
+
 ## Customer Success
 
 Several Heroku customers have already deployed their production Heroku apps to the Europe region for improved performance. For example, top Swedish television network TV4 is currently running its video on demand service [TV4 Play](http://www.tv4play.se/) out of Heroku’s Europe region. TV4 CTO Per Åström says:
@@ -64,8 +70,8 @@ Digital agencies and other customers delivering user-facing mobile and social ap
 
 ## Safe Harbor Compliance is Coming Soon
 
-Heroku is not yet a registered participant in the Safe Harbor program. We’ve laid the groundwork for becoming Safe Harbor certified and expect to have it soon. The Europe region public beta is designed to let you build high-performance apps for European users. It does not currently address data residency or jurisdiction concerns. You should assume that some portions of your app and it's data will be in, or pass through,
-data centers located in the US.
+Heroku is not yet a registered participant in the Safe Harbor program. We’ve laid the groundwork for becoming Safe Harbor certified and expect to have it soon. The Europe region public beta is designed to let you build high-performance apps for European users. It does not currently address data residency or jurisdiction concerns. You should assume that some portions of your app and its data will be in, or pass through,
+datacenters located in the US.
 
 ## We Want Your Feedback
 
