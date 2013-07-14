@@ -1,4 +1,4 @@
-Today we’re happy to announce Heroku’s Europe region, available in public beta. With more than [3 million apps](https://www.heroku.com/) running on our platfrom from developers all over the globe, it's not surprising that we've had high demand for Heroku in more regions of the world. After collaborating closely with customers during private beta, we're now ready to offer Heroku services in Europe to all customers as part of a public beta. The Europe region runs Heroku applications from datacenters located in Europe, offering improved performance for users in that region.
+Today we’re happy to announce Heroku’s Europe region, available in public beta. With more than [3 million apps](https://www.heroku.com/) running on our platform from developers all over the globe, it's not surprising that we've had high demand for Heroku in more regions of the world. After collaborating closely with customers during private beta, we're now ready to offer Heroku services in Europe to all customers as part of a public beta. The Europe region runs Heroku applications from datacenters located in Europe, offering improved performance for users in that region.
 
 ## One Heroku, Two Continents
 
@@ -39,23 +39,83 @@ Note: `heroku fork` will not move any domains or scale your app past a single dy
 [More than 60 add-ons](https://addons.heroku.com/?q=europe) are currently available in the Europe region, with more on the way. To ensure that your app has fast access to its data wherever it’s deployed, Heroku automatically provisions latency-sensitive add-ons in your app’s region. Many add-ons are already available to apps in the Europe region, including:
 
 <ol class="addon_matrix">
-  <li><a href="https://addons.heroku.com/heroku-postgresql" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/46/original.png')">Heroku Postgres</a></li>
-  <li><a href="https://addons.heroku.com/mongolab" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/750/original.png')">MongoLab</a></li>
-  <li><a href="https://addons.heroku.com/memcachier" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/322/original.png')">Memcachier</a></li>
-  <!-- <li><a href="https://addons.heroku.com/rediscloud" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/740/original.png')">Redis Cloud</a></li> -->
-  <li><a href="https://addons.heroku.com/openredis" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/632/original.png')">openredis</a></li>
-  <li><a href="https://addons.heroku.com/newrelic" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/144/original.png')">New Relic</a></li>
-  <li><a href="https://addons.heroku.com/websolr" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/26/original.png')">Websolr</a></li>
-  <li><a href="https://addons.heroku.com/scheduler" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/176/original.png')">Scheduler</a></li>
-  <li><a href="https://addons.heroku.com/deployhooks" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/21/original.png')">Deploy Hooks</a></li>
-<li><a href="https://addons.heroku.com/sendgrid" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/58/original.png')">SendGrid</a></li>
-<li><a href="https://addons.heroku.com/airbrake" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/406/original.png')">Airbrake</a></li>
-<li><a href="https://addons.heroku.com/papertrail" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/360/original.png')">Papertrail</a></li>
-<li><a href="https://addons.heroku.com/cleardb" style="background-image: url('https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/303/original.png')">ClearDB</a></li>
+  <li>
+    <a href="https://addons.heroku.com/heroku-postgresql">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/46/original.png">
+      <span>Heroku Postgres</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/mongolab">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/750/original.png">
+      <span>MongoLab</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/memcachier">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/322/original.png">
+      <span>Memcachier</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/openredis">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/632/original.png">
+      <span>openredis</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/newrelic">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/144/original.png">
+      <span>New Relic</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/websolr">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/26/original.png">
+      <span>Websolr</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/scheduler">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/176/original.png">
+      <span>Scheduler</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/deployhooks">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/21/original.png">
+      <span>Deploy Hooks</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/sendgrid">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/58/original.png">
+      <span>SendGrid</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/airbrake">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/406/original.png">
+      <span>Airbrake</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/papertrail">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/360/original.png">
+      <span>Papertrail</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://addons.heroku.com/cleardb">
+      <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/303/original.png">
+      <span>ClearDB</span>
+    </a>
+  </li>
 </ol>
 
 To discover which add-ons are available in the Europe region, [search for 'europe' on the addons homepage](https://addons.heroku.com/?q=europe) or use the new `--region` flag in the heroku CLI:
 
+    $ heroku update
     $ heroku addons:list --region eu
 
 ## Customer Success
