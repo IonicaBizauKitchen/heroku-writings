@@ -4,7 +4,7 @@ PVH asks...
 
 ## My Priorities
 
-Things I'm working on now and intend to work on soon, in that order.
+Things I'm working on now and intend to work on soon.
 
 - [Ensou](https://github.com/heroku/ensou#readme), Heroku's Stylesheet Framework
 - [Fuji](https://github.com/heroku/fuji), Heroku's cross-property navigation
@@ -18,7 +18,7 @@ Things I'm working on now and intend to work on soon, in that order.
 
 ## Hard Stuff
 
-Lower-level engineering problems that are very important to our customers, yet beyond my areas of expertise. The Node project really needs someone with Unix skills.
+Engineering problems that are important to our customers, yet beyond my areas of expertise. The Node project really needs someone with Unix skills.
 
 - [caching](https://github.com/heroku/heroku-buildpack-nodejs/issues/17)
 - [native/binary/compiled dependencies](https://github.com/heroku/heroku-buildpack-nodejs/pull/33)
@@ -33,6 +33,7 @@ Lower-level engineering problems that are very important to our customers, yet b
 - http://arunoda.me (wow)
 - https://github.com/maxogden
 - https://github.com/substack
+- [Tim Caswell](http://www.kickstarter.com/projects/creationix/js-git)
 
 ## Javascripty Herokai
 
