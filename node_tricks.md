@@ -6,12 +6,10 @@ npm http 200 https://registry.npmjs.org/request
 
 Starting with Node 0.6, since require() can read and parse JSON files automatically, you can leverage it to easily introspect package.json:
 
-require('my-module/package').name
 
-npm docs grunt
 npm docs express
-
 npm view express
+npm info express repository
 
 https://npmjs.org/doc/json.html#repository
 
