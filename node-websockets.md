@@ -12,13 +12,47 @@ If you're new to Heroku or Node.js development, you'll need to set up a few thin
 - [Heroku Toolbelt](https://toolbelt.heroku.com), which gives you git, foreman, and the heroku command-line interface.
 - [Node.js](http://nodejs.org/), easily installed on Mac, Windows, and Linux with packages from [nodejs.org](http://nodejs.org/).
 
-## About the Sample App
-
-The behavior of this sample app is very simple: The server periodically sends messages to the browser over a WebSocket, and the browser renders each new message in the DOM. You can observe this by viewing the deployed sample app at [node-ws-test.herokuapp.com](https://node-ws-test.herokuapp.com/).
+## The Server
 
 The [server](https://github.com/heroku-examples/node-ws-test/blob/master/server.js) is a Node.js app powered by [express 3](http://expressjs.com/guide.html), node's native [http](http://nodejs.org/api/http.html) module, and the [einaros/ws](https://github.com/einaros/ws/blob/master/doc/ws.md) WebSocket implementation. Express is used to serve the static frontend.
 
-The [client](https://github.com/heroku-examples/node-ws-test/blob/master/index.html) has no dependencies. It makes use of the browser's native WebSocket functionality to establish a connection with the server.
+When the server establishes a connection with a client, it declares a function that runs every 1000 ms, periodically sending a timestamp to the browser over the WebSocket:
+
+```js
+var server = http.createServer(app);
+server.listen(port);
+
+var wss = new WebSocketServer({server: server});
+console.log('websocket server created');
+wss.on('connection', function(ws) {
+  var id = setInterval(function() {
+    ws.send(JSON.stringify(new Date()), function() {  });
+  }, 1000);
+
+  console.log('websocket connection open');
+
+  ws.on('close', function() {
+    console.log('websocket connection close');
+    clearInterval(id);
+  });
+});
+```
+
+## The Client
+
+The [client](https://github.com/heroku-examples/node-ws-test/blob/master/index.html) makes use of the browser's native WebSocket feature to establish a connection with the server, then renders each new message it receives from the server.
+
+```js
+  var host = location.origin.replace(/^http/, 'ws')
+  var ws = new WebSocket(host);
+  ws.onmessage = function (event) {
+    var li = document.createElement('li');
+    li.innerHTML = JSON.parse(event.data);
+    document.querySelector('#pings').appendChild(li);
+  };
+```
+
+You can observe this by viewing the demo at [node-ws-test.herokuapp.com](https://node-ws-test.herokuapp.com/).
 
 ## Running the App Locally
 
@@ -69,7 +103,15 @@ at [localhost:5000](http://localhost:5000).
 
 ## Deploying to Heroku
 
-Create a new Heroku app:
+It’s time to deploy your app to Heroku. If you haven’t done so already put your application into a git repository:
+
+```term
+$ git init
+$ git add .
+$ git commit -m "Ready to deploy"
+```
+
+Create the Heroku app to deploy to:
 
 ```term
 $ heroku create
@@ -78,7 +120,7 @@ http://boiling-bastion-2872.herokuapp.com/ | git@heroku.com:boiling-bastion-2872
 Git remote heroku added
 ```
 
-Enable websockets for your new app:
+While in beta, WebSocket functionality must be enabled via the Heroku Labs:
 
 ```term
 $ heroku labs:enable websockets
@@ -87,7 +129,7 @@ WARNING: This feature is experimental and may change or be removed without notic
 For more information see: https://devcenter.heroku.com/articles/heroku-labs-websockets
 ```
 
-Push your app to Heroku:
+Deploy your code with git push.
 
 ```term
 $ git push heroku master
@@ -123,7 +165,8 @@ To git@heroku.com:boiling-bastion-2872.git
  * [new branch]      master -> master
  ```
 
-Open your newly deployed app in the browser:
+Congratulations! Your web app should now be up and running on Heroku. Open your newly deployed
+app in the browser:
 
 ```term
 $ heroku open
@@ -140,6 +183,7 @@ and the browser's Geolocation API.
 
 For more information about using Node.js and WebSockets on Heroku, see the following articles:
 
-- [Heroku Labs: WebSockets](https://devcenter.heroku.com/articles/heroku-labs-websockets)
+- [WebSockets](https://devcenter.heroku.com/articles/heroku-labs-websockets)
+- [Application Architecture](https://devcenter.heroku.com/articles/heroku-labs-websockets#application-architecture)
 - [WebSocket Security](https://devcenter.heroku.com/articles/websockets-security)
 - [WebSockets Public Beta Blog Post](https://blog.heroku.com/archives/2013/10/3/websockets-public-beta)
